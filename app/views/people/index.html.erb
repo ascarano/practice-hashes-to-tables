@@ -3,10 +3,35 @@
 </div>
 
 <table class="table table-bordered">
+
   <thead>
-
+    <tr>
+      <% @people[0].each_key do |key| %>
+      <th>
+        <%= key.to_s.humanize %>
+      </th>
+      <% end %>
+    </tr>
   </thead>
+  <% @people.each do |person| %>
   <tbody>
-
+    <tr>
+      <td>
+        <%= person[:first_name] %>
+      </td>
+      <td>
+        <%= person[:last_name] %>
+      </td>
+      <td>
+        <%= person[:date_of_birth] %>
+      </td>
+      <td>
+        <%= person[:eye_color] %>
+      </td>
+      <td>
+        <%= person[:telephone_number] %>
+      </td>
+    </tr>
+    <% end %>
   </tbody>
 </table>
